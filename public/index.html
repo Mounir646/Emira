@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Emira 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--sky1:#bfe3ff;--sky2:#eaf6ff;--ink:#23406b;--pink:#ff8fb8;--card:rgba(255,255,255,.72);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky1:#17315c;--sky2:#2b5a96;--ink:#eaf4ff;--card:rgba(20,40,80,.6)}}
+:root[data-theme="dark"]{--sky1:#17315c;--sky2:#2b5a96;--ink:#eaf4ff;--card:rgba(20,40,80,.6)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:Fredoka,system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--sky1),var(--sky2) 70%,#fff);overflow:hidden;display:flex;align-items:center;justify-content:center;perspective:900px}
+.cloud{position:fixed;background:#fff;border-radius:99px;opacity:.85;filter:blur(1px);animation:drift linear infinite}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud:before{width:55%;height:160%;left:15%;top:-70%}.cloud:after{width:40%;height:130%;right:15%;top:-45%}
+@keyframes drift{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
+.petal{position:fixed;top:-30px;width:14px;height:18px;background:radial-gradient(circle at 30% 30%,#ffd0e2,var(--pink));border-radius:80% 0 80% 0;animation:fall linear infinite;z-index:1;pointer-events:none}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(720deg)}}
+.flowers{position:fixed;bottom:0;width:100%;height:90px;display:flex;justify-content:space-around;align-items:flex-end;font-size:34px;z-index:1;pointer-events:none}
+.flowers span{animation:sway 3s ease-in-out infinite alternate;transform-origin:bottom}
+@keyframes sway{to{transform:rotate(8deg)}}
+.side{position:fixed;font-size:46px;z-index:1;animation:sway 4s ease-in-out infinite alternate}
+.card{position:relative;z-index:2;width:min(92vw,430px);padding:34px 26px;border-radius:30px;background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-align:center;box-shadow:0 30px 60px rgba(60,110,190,.3),0 0 0 2px rgba(255,255,255,.7) inset;transition:transform .1s;transform-style:preserve-3d}
+h1{font-family:'Dancing Script',cursive;font-size:clamp(38px,11vw,54px);color:var(--pink);transform:translateZ(40px);line-height:1.1}
+p{font-size:18px;line-height:1.55;margin:16px 0;min-height:84px;transform:translateZ(20px)}
+button{font:inherit;font-weight:600;border:0;border-radius:99px;padding:13px 28px;margin:6px;cursor:pointer;color:#fff;background:linear-gradient(135deg,#6fb4ff,#3e7fe0);box-shadow:0 8px 18px rgba(62,127,224,.4);transition:transform .15s}
+button:hover{transform:scale(1.07)}button:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+#yes{background:linear-gradient(135deg,#ff9cc4,#ff6fa5);box-shadow:0 8px 18px rgba(255,111,165,.45)}
+#no{position:relative;background:#9db4d6;box-shadow:none}
+.sign{margin-top:18px;font-family:'Dancing Script',cursive;font-size:20px;opacity:.85}
+.hide{display:none}
+
+.music{position:fixed;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;gap:10px;z-index:5}
+.music button{margin:0;padding:11px 24px;background:rgba(255,255,255,.8);color:var(--ink);box-shadow:0 6px 14px rgba(60,110,190,.25)}
+.music button[aria-pressed="true"]{background:linear-gradient(135deg,#6fb4ff,#3e7fe0);color:#fff}
+#yt{position:fixed;left:0;top:0;width:2px;height:2px;border:0;opacity:0;pointer-events:none}
+#cute{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .8s;background:radial-gradient(circle at 20% 20%,rgba(255,200,225,.7),transparent 45%),radial-gradient(circle at 80% 70%,rgba(180,215,255,.8),transparent 50%)}
+body.off #cute{opacity:1}
+.fl{position:absolute;bottom:-40px;animation:rise linear infinite}
+@keyframes rise{to{transform:translate(var(--dx),-115vh) rotate(25deg)}}
+.hop{position:fixed;bottom:70px;font-size:34px;z-index:1;animation:hop 1.1s ease-in-out infinite;opacity:0;transition:opacity .8s}
+body.off .hop{opacity:1}
+@keyframes hop{50%{transform:translateY(-26px)}}
+@media (prefers-reduced-motion:reduce){.fl,.hop,.cloud,.petal,.flowers span,.side{animation:none}}
+</style>
+</head>
+<body class="off">
+<div id="cute"></div><span class="hop" style="left:12%">🐰</span><span class="hop" style="right:14%;animation-delay:-.5s">🐻</span><span class="hop" style="left:46%;animation-delay:-.8s">🐥</span>
+<div class="cloud" style="width:120px;height:34px;top:9%;animation-duration:70s"></div>
+<div class="cloud" style="width:90px;height:26px;top:22%;animation-duration:95s;animation-delay:-40s"></div>
+<div class="cloud" style="width:150px;height:40px;top:68%;animation-duration:85s;animation-delay:-20s"></div>
+<div class="side" style="left:6px;top:38%">🌸</div><div class="side" style="right:6px;top:52%;animation-delay:-2s">🌸</div>
+<div class="flowers"><span>🌸</span><span style="animation-delay:-1s">🌷</span><span style="animation-delay:-2s">🌸</span><span>🌷</span><span style="animation-delay:-1.5s">🌸</span></div>
+
+<main class="card" id="card">
+  <h1 id="title">Hi Emira 🌸</h1>
+  <p id="text">I made this little place just for you. Tap the button, okay?</p>
+  <div id="btns"><button id="next">Open ☁️</button></div>
+  <div class="hide" id="ask"><button id="yes">Yes, I forgive you 💗</button><button id="no">No</button></div>
+  <div class="sign">Directed by Mounir Asrih</div>
+</main>
+
+<div class="music"><button id="on" aria-pressed="false">🎵 On</button><button id="off" aria-pressed="true">🔇 Off</button></div>
+
+<script>
+const steps=[
+ ["Hi Emira 🌸","I made this little place just for you. Tap the button, okay?"],
+ ["I'm sorry","Last night I went to sleep and I didn't say goodbye. I should have told you, and I'm really sorry for that."],
+ ["I'm so happy...","You text me every day, you're a really special friend, and you're so cute. I hope I can make you happy too."],
+ ["One question","Sorry for my English, haha. So... can you forgive me, and can we be okay again?"]
+];
+let i=0;const $=id=>document.getElementById(id);
+$('next').onclick=()=>{
+  i++;$('title').textContent=steps[i][0];$('text').textContent=steps[i][1];
+  if(i===steps.length-1){$('btns').classList.add('hide');$('ask').classList.remove('hide')}
+  else $('next').textContent="Next 💙";
+};
+function petals(n){for(let k=0;k<n;k++){const p=document.createElement('div');p.className='petal';
+  p.style.left=Math.random()*100+'vw';p.style.setProperty('--dx',(Math.random()*160-80)+'px');
+  p.style.animationDuration=(5+Math.random()*7)+'s';p.style.animationDelay=(-Math.random()*8)+'s';
+  p.style.transform='scale('+(.6+Math.random()*.8)+')';document.body.appendChild(p);
+  if(n>60)setTimeout(()=>p.remove(),9000)}}
+petals(22);
+const no=$('no');
+function dodge(){no.style.left=(Math.random()*120-60)+'px';no.style.top=(Math.random()*80-40)+'px'}
+no.addEventListener('mouseover',dodge);no.addEventListener('touchstart',e=>{e.preventDefault();dodge()});no.onclick=dodge;
+$('yes').onclick=()=>{
+  $('ask').classList.add('hide');$('title').textContent="Thank you 💗";
+  $('text').textContent="You just made my day, Emira. i Promise I'll say goodbye properly next time 🌸";
+  petals(120);
+};
+const card=$('card');
+addEventListener('pointermove',e=>{const x=(e.clientX/innerWidth-.5)*14,y=(e.clientY/innerHeight-.5)*-14;card.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`});
+
+const cute=$('cute'),em=['💗','⭐','✨','💙','🫧','🌸'];
+for(let k=0;k<22;k++){const e=document.createElement('span');e.className='fl';e.textContent=em[k%em.length];
+ e.style.left=Math.random()*100+'vw';e.style.fontSize=(14+Math.random()*22)+'px';e.style.setProperty('--dx',(Math.random()*120-60)+'px');
+ e.style.animationDuration=(7+Math.random()*9)+'s';e.style.animationDelay=(-Math.random()*12)+'s';cute.appendChild(e)}
+
+// YouTube song
+const VIDEO_ID='6yxRvLRKEPw';
+let yt=null;
+function setMusic(on){
+  $('on').setAttribute('aria-pressed',on);
+  $('off').setAttribute('aria-pressed',!on);
+  document.body.classList.toggle('off',!on);
+yt=document.createElement('iframe');
+yt.id='yt';
+yt.allow='autoplay; encrypted-media';
+yt.referrerPolicy='strict-origin-when-cross-origin';
+yt.src=`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&loop=1&playlist=${VIDEO_ID}&playsinline=1&origin=${location.origin}`;
+document.body.appendChild(yt);
+  
+  if(!on&&yt){yt.remove();yt=null}
+}
+$('on').onclick=()=>setMusic(true);
+$('off').onclick=()=>setMusic(false);
+</script>
+</body>
+</html>
